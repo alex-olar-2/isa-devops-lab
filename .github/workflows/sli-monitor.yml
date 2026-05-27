@@ -3,17 +3,17 @@ name: SLI Monitor - Metrici & Observabilitate
 # Rulează automat la fiecare oră și manual (pentru demo în laborator)
 on:
   schedule:
-    - cron: '0 * * * *'   # la fiecare oră fixă (sintaxă cron standard)
-  workflow_dispatch:       # declanșare manuală din interfața GitHub
+    - cron: "0 * * * *" # la fiecare oră fixă (sintaxă cron standard)
+  workflow_dispatch: # declanșare manuală din interfața GitHub
     inputs:
       slo_latency_ms:
-        description: 'Prag SLO latență (ms)'
+        description: "Prag SLO latență (ms)"
         required: false
-        default: '500'
+        default: "500"
       slo_availability:
-        description: 'Prag SLO disponibilitate (%)'
+        description: "Prag SLO disponibilitate (%)"
         required: false
-        default: '99.0'
+        default: "99.0"
 
 jobs:
   measure-sli:
